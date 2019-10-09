@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-md-4 p-2" *ngFor="let employee of employees">
+        <div class="card">
+            <div class="card-header">
+                <h1 class="text-center">{{employee.name}}</h1>
+            </div>
+            <div class="card-body">
+                <ul>
+                    <li>ID: {{employee._id}}</li>
+                    <li>Position: {{employee.position}}</li>
+                    <li>Office: {{employee.office}}</li>
+                    <li>Salary: {{employee.salary}}</li>
+                </ul>
+            </div>
+            <div class="card-header">
+                <button class="btn btn-danger mr-4" (click)="deleteEmployee(employee._id)">Delete</button>
+                <button class="btn btn-secondary" [routerLink]="['/employee/edit', employee._id]">Edit</button>
+            </div>
+        </div>
+    </div>
+</div>
